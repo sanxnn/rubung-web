@@ -3,10 +3,13 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Payment extends Model
 {
+    use HasUuids;
+
     protected $fillable = ['order_id', 'type', 'amount', 'payment_method', 'payment_url', 'transaction_id', 'status', 'paid_at'];
 
     protected function casts(): array
