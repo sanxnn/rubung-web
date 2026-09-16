@@ -3,11 +3,14 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class CustomOrder extends Model
 {
+    use HasUuids;
+
     protected $fillable = [
         'user_id', 'customer_name', 'customer_phone', 'description',
         'design_image_url', 'requested_price', 'admin_price',

@@ -3,11 +3,14 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Shipment extends Model
 {
+    use HasUuids;
+
     protected $fillable = ['order_id', 'courier', 'tracking_number', 'scheduled_ship_date', 'shipped_at', 'delivered_at', 'status'];
 
     protected function casts(): array

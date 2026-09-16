@@ -3,10 +3,13 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Promotion extends Model
 {
+    use HasUuids;
+
     protected $fillable = [
         'name', 'code', 'type', 'value', 'min_purchase',
         'max_discount', 'usage_limit', 'used_count',
